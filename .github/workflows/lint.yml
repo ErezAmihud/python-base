@@ -23,6 +23,9 @@ jobs:
       - name: format
         if: always()
         run: black . --check
+  lint-dockerfiles:
+    runs-on: ubuntu-latest
+    steps:
       - name: Lint Dockerfile
         uses: hadolint/hadolint-action@master
         with:
