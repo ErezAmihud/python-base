@@ -1,6 +1,9 @@
-def HelloThere():
-	try:
-		print("something")
-	except:
-		pass
-	print("none")
+def HelloThere(a: int):
+    try:
+        print("something")
+    except:
+        pass
+    print("none")
+
+
+HelloThere("4")
