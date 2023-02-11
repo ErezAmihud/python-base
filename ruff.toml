@@ -1,0 +1,15 @@
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "N",  # pep8 naming
+    "I",  # isort
+    "UP", # pyupgrade
+    "FBT", # boolean trap
+    "C",  # flake8-comprehensions
+    "B",  # flake8-bugbear
+]
+line-length = 88 # same as black
+ignore = [
+    "E501",  # line too long, handled by black
+]
