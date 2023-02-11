@@ -5,5 +5,5 @@ setup(
     author="Erez Amihud",
     author_email="erezamihud@gmail.com",
     packages=find_packages(),
-    extras_require={"dev": ["ruff"]},
+    extras_require={"dev": ["ruff", "black", "pyright"]},
 )
