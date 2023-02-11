@@ -15,8 +15,7 @@ jobs:
       - name: Install Dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: pip install -e .[dev]
-      - name: static check
-        run: pyright .
+      - uses: jakebailey/pyright-action@v1
       - name: Lint
         run: ruff . --format github --respect-gitignore
       - name: format
