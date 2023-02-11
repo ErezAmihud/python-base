@@ -16,4 +16,4 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: pip install -e .[dev]
       - name: Lint
-        run: ruff package --format github --respect-gitignore
+        run: ruff . --format github --respect-gitignore
