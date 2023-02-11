@@ -23,3 +23,7 @@ jobs:
       - name: format
         if: always()
         run: black . --check
+      - name: Lint Dockerfile
+        uses: hadolint/hadolint-action@master
+        with:
+          dockerfile: "Dockerfile"
