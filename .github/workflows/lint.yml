@@ -22,4 +22,4 @@ jobs:
         run: ruff . --format github --respect-gitignore
       - name: format
         if: always()
-        run: black --check
+        run: black . --check
