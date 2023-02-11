@@ -1,0 +1,22 @@
+repos:
+- repo: https://github.com/python-jsonschema/check-jsonschema
+  rev: 0.21.0
+  hooks:
+    - id: check-github-workflows
+    - id: check-github-actions
+    - id: check-gitlab-ci
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.4.0  # Use the ref you want to point at
+  hooks:
+    - id: trailing-whitespace
+    - id: check-case-conflict
+    - id: check-json
+    - id: check-toml
+    - id: check-xml
+    - id: check-yaml
+    - id: debug-statements
+    - id: end-of-file-fixer
+    - id: mixed-line-ending
+      args:
+        - "--fix=lf"
+    - id: trailing-whitespace
