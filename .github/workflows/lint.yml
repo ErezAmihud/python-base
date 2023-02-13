@@ -1,0 +1,33 @@
+name: test
+on: push
+
+jobs:
+  install-deps:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+          cache: "pip"
+          cache-dependency-path: setup.py
+      - name: Install Dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: pip install -e .[dev]
+      - uses: jakebailey/pyright-action@v1
+        if: always()
+      - name: Lint
+        if: always()
+        run: ruff . --format github --respect-gitignore
+      - name: format
+        if: always()
+        run: black . --check
+  lint-dockerfiles:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Lint Dockerfile
+        uses: hadolint/hadolint-action@master
+        with:
+          dockerfile: "Dockerfile"
