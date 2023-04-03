@@ -1,6 +1,6 @@
 repos:
 - repo: https://github.com/python-jsonschema/check-jsonschema
-  rev: 0.21.0
+  rev: 0.22.0
   hooks:
     - id: check-github-workflows
     - id: check-github-actions
@@ -19,6 +19,6 @@ repos:
         - "--fix=lf"
     - id: trailing-whitespace
 - repo: https://github.com/psf/black
-  rev: 23.1.0
+  rev: 23.3.0
   hooks:
     - id: black
